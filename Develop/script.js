@@ -1,4 +1,26 @@
 // Assignment code here
+var generatePassword = function() {
+  characterAmount();
+
+
+  
+
+  window.prompt ("Would you like uppercase letters")
+
+  window.prompt ("Would you like numbers")
+
+  window.prompt ("Would you like special characters")
+}
+
+var characterAmount =function () {
+  window.prompt ("How many Characters would you like? 8 through 128")
+}
+
+var lowercaseLetter = function() {
+  window.prompt ("Would you like lowercase letters?  y for Yes and n for No")
+}
+
+
 
 
 // Get references to the #generate element
