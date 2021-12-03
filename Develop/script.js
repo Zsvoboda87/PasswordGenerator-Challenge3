@@ -1,26 +1,26 @@
-
+// Bank of Arrays to select from
 var lcaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var ucaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',];
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 var specialChar = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+',]
 var zeroArray = []
 
+
 //called after button is clicked.
 generatePassword = function () {
 
-  // Password length selection function
+  // Password length function
   var characterQuantity = function () {
-    var howmany = window.prompt("How many Characters would you like? 8 through 128")
-    {
-      value = parseInt(howmany)
-      if (8 < value < 128) {
-        return value;
-      } else {
-        characterQuantity();
-      }
+    var howmany = window.prompt("How many Characters would you like? 8 through 128");
+    if (8 < howmany && howmany < 128 ) {
+      return howmany
+    }
+    else {
+      window.alert('CAN NOT RUN PASSWORD GENERATOR!  We need a value between 8 and 128. Please Try Again!');
+      endfunction();
     }
   }
-  
+
   // Character selectors. takes User Input and selects appropriate global array (lowercase letters, uppercase letters, numbers, and special characters)
   var lCLL = function () {
     var lowlet = window.confirm("Would you like lower case Letters? Okay for YES, Cancel for NO")
@@ -55,20 +55,21 @@ generatePassword = function () {
     return value;
   }
 
-  // Variables for password gen logic
+  // Variables for password generation logic
   var charQty = characterQuantity();
   var array1 = lCLL();
   var array2 = uCLL();
   var array3 = num();
   var array4 = specChar();
-  // Combine selected Arrays into a masterArray for character selection
+  // Combine confirmed arrays into a masterArray for character selection
   const masterArray = [...array1, ...array2, ...array3, ...array4]
 
   // function to stop no selectors entry
   var runPass = function () {
     if (masterArray.length === 0) {
       var noArray = window.alert("CAN NOT RUN PASSWORD GENERATOR! Please select at least one type of characters.  Try again.")
-      generatePassword();
+      return ("TRY AGAIN!");
+      //tryAgain();
     } else {
       // Logic for Password creation
       var passwrd = []
@@ -77,14 +78,18 @@ generatePassword = function () {
         passwrd.push(passW);
       }
       return passwrd.join('');
-    }
-    
+    }  
+  }
+  var endfunction = function() {
+    return;
   }
   var x = runPass();
-  return x;
-  
+  return x;  
 }
 
+//var tryAgain = function () {
+//  generatePassword();
+//}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
