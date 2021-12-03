@@ -5,7 +5,7 @@
  var specialChar = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', ]
  var zeroArray = []
 
- 
+ // Password length selection function
  var characterQuantity = function(){
     var howmany = window.prompt("How many Characters would you like? 8 through 128")
     if (8 < howmany < 128) {
@@ -16,7 +16,7 @@
     }
   }
 
-
+// Character selectors. takes User Input and selects appropriate global array (lowercase letters, uppercase letters, numbers, and special characters)
   var lCLL = function () {
     var lowlet = window.confirm("Would you like lower case Letters?")
     if (lowlet) {
@@ -55,30 +55,27 @@
   var array2 = uCLL();
   var array3 = num();
   var array4 = specChar();
+  // Combine selected Arrays into a masterArray for character selection
   const masterArray = [...array1, ...array2, ...array3, ...array4]
 
-
+// console logs for testing purposes to be removed
 console.log(masterArray)
 console.log(charQty) 
+//console.log(masterArray[Math.floor(Math.random()* masterArray.length)])
 
-console.log(masterArray[Math.floor(Math.random()* masterArray.length)])
-  
+var password = []
+
+for (var i = 0; i < charQty; i++) {
+  var passW = masterArray[Math.floor(Math.random()* masterArray.length)];
+  password.push(passW);
+  }
+
+console.log(password)
+
+
 
 
  //var generatePassword = function () {}
-
-
-//for (var i = 0; i < characterQuantity; i++) {var 
-
-
-  
-//}
-  
-
-
-
-
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
