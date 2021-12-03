@@ -5,6 +5,8 @@
  var specialChar = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', ]
  var zeroArray = []
 
+
+
  // Password length selection function
  var characterQuantity = function(){
     var howmany = window.prompt("How many Characters would you like? 8 through 128")
@@ -70,7 +72,7 @@ for (var i = 0; i < charQty; i++) {
   password.push(passW);
   }
 
-console.log(password)
+console.log(password.join(''))
 
 
 
