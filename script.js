@@ -6,6 +6,7 @@ var specialChar = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+',]
 var zeroArray = []
 
 
+
 //called after button is clicked.
 generatePassword = function () {
 
@@ -64,32 +65,28 @@ generatePassword = function () {
   // Combine confirmed arrays into a masterArray for character selection
   const masterArray = [...array1, ...array2, ...array3, ...array4]
 
-  // function to stop no selectors entry
+  // Function to create random password with the users input
   var runPass = function () {
+    //Conditional to stop generator if no characters were selected
     if (masterArray.length === 0) {
       var noArray = window.alert("CAN NOT RUN PASSWORD GENERATOR! Please select at least one type of characters.  Try again.")
       return ("TRY AGAIN!");
-      //tryAgain();
     } else {
       // Logic for Password creation
-      var passwrd = []
+      var passwordArray = []
       for (var i = 0; i < charQty; i++) {
         var passW = masterArray[Math.floor(Math.random() * masterArray.length)];
-        passwrd.push(passW);
+        passwordArray.push(passW);
       }
-      return passwrd.join('');
+      return passwordArray.join('');
     }  
   }
   var endfunction = function() {
     return;
   }
   var x = runPass();
-  return x;  
+    return x;  
 }
-
-//var tryAgain = function () {
-//  generatePassword();
-//}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -100,7 +97,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password
-
 }
 
 // Add event listener to generate button

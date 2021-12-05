@@ -19,7 +19,7 @@ generatePassword = function () {
       window.alert('CAN NOT RUN PASSWORD GENERATOR!  We need a value between 8 and 128. Please Try Again!');
       endfunction();
     }
-  }
+  }log
 
   // Character selectors. takes User Input and selects appropriate global array (lowercase letters, uppercase letters, numbers, and special characters)
   var lCLL = function () {
