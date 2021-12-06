@@ -48,7 +48,7 @@ generatePassword = function () {
     return value;
   }
   var specChar = function () {
-    var spec = window.confirm("Would you like lower Owasp approved special characters?  Okay for YES, Cancel for NO")
+    var spec = window.confirm("Would you like special characters?  Okay for YES, Cancel for NO")
     if (spec) {
       var value = specialChar
     }
