@@ -16,3 +16,6 @@ https://zsvoboda87.github.io/PasswordGenerator-Challenge3/
 Zsvoboda87 created this project after cloning the starter code from 
 Xandromus
 
+
+## ScreenShot
+![Screenshot](/Develop/Screenshot-challenge3.png)
